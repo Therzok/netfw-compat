@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks Condition="$(IsWindows) Or $(IsMono)">$(TargetFrameworks);net45</TargetFrameworks>
 
     <Summary>Compatibility shims for nullability attributes in netstandard 2.0.</Summary>
     <Description>Includes nullability types as source via as internal classes, allowing roslyn to provide nullability information.</Description>
     <PackageTags>Diagnostic Nullability Compatibility</PackageTags>
     <Authors>Marius Ungureanu</Authors>
 
-    <PackageVersion>0.1.0</PackageVersion>
+    <PackageVersion>$(SDCCVersion)</PackageVersion>
     <PackageProjectUrl>https://github.com/Therzok/System.Diagnostics.CodeAnalysis.Compat</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 

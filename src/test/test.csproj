@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp2.0;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks Condition="$(IsWindows) Or $(IsMono)">$(TargetFrameworks);net45;net472;net48</TargetFrameworks>
+    <RestoreSources>$(PackageOutputPath);$(RestoreSources)</RestoreSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Diagnostics.CodeAnalysis.Compat" Version="$(SDCCVersion)" />
+  </ItemGroup>
+</Project>

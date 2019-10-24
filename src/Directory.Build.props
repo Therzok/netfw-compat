@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <SDCCVersion>0.1.0</SDCCVersion>
+
+    <LangVersion>8.0</LangVersion>
+
+    <RootDir>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\'))</RootDir>
+    <CommonBinPath>$(RootDir)bin\</CommonBinPath>
+    <CommonObjPath>$(RootDir)obj\</CommonObjPath>
+
+    <BaseIntermediateOutputPath>$(CommonObjPath)\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <BaseOutputPath Condition=" '$(BaseOutputPath)' == '' ">$(CommonBinPath)\$(MSBuildProjectName)\</BaseOutputPath>
+    <PackageOutputPath>$(CommonBinPath)pkgs-$(Configuration)\</PackageOutputPath>
+
+    <IsWindows>$([MSBuild]::IsOsPlatform('Windows'))</IsWindows>
+    <IsMono>false</IsMono>
+    <IsMono Condition=" '$(MSBuildRuntimeType)' == 'Mono' ">true</IsMono>
+  </PropertyGroup>
+</Project>
