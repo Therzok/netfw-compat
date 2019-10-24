@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <Summary>Compatibility shims for nullability attributes in netstandard 2.0.</Summary>
+    <Description>Includes nullability types as source via as internal classes, allowing roslyn to provide nullability information.</Description>
+    <PackageTags>Diagnostic Nullability Compatibility</PackageTags>
+    <Authors>Marius Ungureanu</Authors>
+
+    <PackageVersion>0.1.0</PackageVersion>
+    <PackageProjectUrl>https://github.com/Therzok/System.Diagnostics.CodeAnalysis.Compat</PackageProjectUrl>
+
+    <!-- We don't want the dll, we want the source code added with internal -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="NullableAttributes.cs" Pack="true" PackagePath="build" />
+    <Content Include="System.Diagnostics.CodeAnalysis.Compat.targets" Pack="true" PackagePath="build" />
+  </ItemGroup>
+</Project>
