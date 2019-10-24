@@ -22,6 +22,6 @@
 
   <ItemGroup>
     <Content Include="NullableAttributes.cs" Pack="true" PackagePath="build" />
-    <Content Include="System.Diagnostics.CodeAnalysis.Compat.targets" Pack="true" PackagePath="build" />
+    <Content Include="Compat.System.Diagnostics.CodeAnalysis.targets" Pack="true" PackagePath="build" />
   </ItemGroup>
 </Project>
