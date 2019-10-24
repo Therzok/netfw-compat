@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <SDCCVersion>0.1.0</SDCCVersion>
+    <SDCCVersion>0.1.1</SDCCVersion>
 
     <LangVersion>8.0</LangVersion>
 
