@@ -7,6 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Diagnostics.CodeAnalysis.Compat" Version="$(SDCCVersion)" />
+    <PackageReference Include="Compat.System.Diagnostics.CodeAnalysis" Version="$(SDCCVersion)" />
   </ItemGroup>
 </Project>
