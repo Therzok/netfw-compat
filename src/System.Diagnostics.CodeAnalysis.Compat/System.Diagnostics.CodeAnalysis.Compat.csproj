@@ -9,11 +9,13 @@
 
     <PackageVersion>0.1.0</PackageVersion>
     <PackageProjectUrl>https://github.com/Therzok/System.Diagnostics.CodeAnalysis.Compat</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
     <!-- We don't want the dll, we want the source code added with internal -->
     <IncludeBuildOutput>false</IncludeBuildOutput>
 
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <!-- Automatically run dotnet pack -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

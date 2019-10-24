@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
+  <PropertyGroup>
+    <_TFMFramework>$(TargetFramework.TrimEnd('.0123456789'))</_TFMFramework>
+    <_TFMVersion>$(TargetFramework.Substring($(_ShortFrameworkIdentifier.Length)))</_TFMVersion>
+
+    <!-- See compatibility table: https://docs.microsoft.com/en-us/dotnet/standard/net-standard#net-implementation-support -->
+    <_AddNullability>false</_AddNullability>
+    <_AddNullability Condition=" '$(_TFMFramework)' == 'net' ">true</_AddNullability>
+    <_AddNullability Condition=" '$(_TFMFramework)' == 'netcoreapp' And $(_TFMVersion) &lt;= 2.2 ">true</_AddNullability>
+    <_AddNullability Condition=" '$(_TFMFramework)' == 'netstandard' And $(_TFMVersion) &lt;= 2.0 ">true</_AddNullability>
+  </PropertyGroup>
+
+  <!-- Don't add this to projects which are netstandard 2.1 compatible -->
+  <ItemGroup Condition="$(_AddNullability)">
     <Compile Include="$(MSBuildThisFileDirectory)\NullableAttributes.cs">
       <Visible>false</Visible>
     </Compile>
